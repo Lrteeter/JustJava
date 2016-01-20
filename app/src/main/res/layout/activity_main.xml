@@ -1,0 +1,198 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wallpaper"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+    <requestFocus/></ImageView>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/name_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="@string/name"
+                    android:inputType="text"
+                    android:padding="20dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:cursorVisible="true"
+                    android:textSize="20sp"/>
+
+                <LinearLayout
+                    android:id="@+id/quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal"
+                    android:paddingTop="16dp"
+                    android:textAlignment="center">
+
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:padding="16dp"
+                        android:text="@string/quantity"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/decrement"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="#e0e0e0"
+                        android:onClick="decrement"
+                        android:text="-"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/quantity_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/increment"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="#e0e0e0"
+                        android:onClick="increment"
+                        android:text="+"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/toppings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        style="@style/HeaderTextStyle"
+                        android:id="@+id/toppings_text_view"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/toppings"
+                        android:textColor="@android:color/white" />
+
+                    <CheckBox
+                        android:id="@+id/whipped_cream_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"
+                        android:text="@string/whipped_cream"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:onClick="addWhippedCream"/>
+
+                    <CheckBox
+                        android:id="@+id/chocolate_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"
+                        android:text="@string/chocolate"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:onClick="addChocolate"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+
+                    <TextView
+                        android:id="@+id/price_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="16dp"
+                        android:text="@string/initial_price"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="16dp"
+                    android:baselineAligned="false">
+
+                    <Button
+                        android:id="@+id/order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:background="#e0e0e0"
+                        android:onClick="displayOrderSummary"
+                        android:padding="8dp"
+                        android:text="@string/order"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/email_confirm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="#e0e0e0"
+                        android:onClick="confirmEmail"
+                        android:padding="8dp"
+                        android:text="@string/email_summary"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textSize="14sp"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/confirmation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/order"
+                    android:padding="16dp"
+                    android:text="\n"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+

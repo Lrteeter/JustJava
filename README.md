@@ -1,7 +1,7 @@
 # JustJava
 
 Android app made with Android Studio
-- Has support for Spanish by extracting all UI strings into seperate language files
+- Has support for Spanish by extracting all UI strings into separate language files
 - Allows sending an order-summary email with Email Intent
 
 To run, download and open file com.example.android.justjava.apk on an Android device
